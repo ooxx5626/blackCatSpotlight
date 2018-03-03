@@ -1,5 +1,7 @@
 此套件可以幫助spotlight做黑貓宅急便包裹狀態的搜尋
-使用方式bc ${包裹編號}
+
+格式
+bc 包裹編號
 
 For more info on how this works, see [the docs](https://github.com/nate-parrott/Flashlight/wiki/Creating-a-Plugin).
 
