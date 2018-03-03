@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'/>
+    <link href="https://www.t-cat.com.tw/css/common.css" type="text/css" rel="stylesheet" />
+    <style>
+    body {
+        padding: 0px;
+        margin: 0px;
+        /*background-color: #ececec;*/
+        font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, "Hiragino Sans GB", STHeiti !important;
+    }
+    .container{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 80px;
+        margin-bottom: 80px;
+        width: 280px;
+    }
+    .icon{
+        float: left;
+        width: 60px;
+        height: 60px;
+        margin-top: 20px;
+    }
+    .content{
+        margin-left: 80px;
+        text-align: left;
+    }
+    h2 {
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 150%;
+        margin: 0px 0px 5px 0px;
+        padding: 0px;
+        word-wrap: break-word;
+        color: #999;
+    }
+    h1 {
+        font-size: 36px;
+        font-weight: 500;
+        line-height: 150%;
+        margin: 0px 0px 5px 0px;
+        padding: 0px;
+        word-wrap: break-word;
+        color: #000;
+    }
+
+    </style>
+    <script src='jquery.min.js'></script>
+    <script>
+       $(document).ready(function() {
+          var data = {'__EVENTTARGET': 'ctl00$ContentPlaceHolder1$btnSend',
+        '__EVENTARGUMENT': '',
+        '__VIEWSTATE': '/wEPDwULLTE2ODAyMTAzNDBkZHngR2yLNdcoB1YXtf+bAIxi/AHF',
+        '__VIEWSTATEGENERATOR': '9A093EFF',
+        '__EVENTVALIDATION': '/wEWDALXz8K8AwKUhrKJAQL5nJT0BgLes/beDALDytjJAgKo4bq0CAKN+JyfDgLyjv+JBAKHub7IDALsz6CzAgKUhvK7DAK97Mp+etzK3cOKerX3pzYyBL/kZYAJxkM=',
+        'q': '站內搜尋',
+        'cx': '005475758396817196247:vpg-mgvhr44',
+        'cof': 'FORID:11',
+        'ie': 'UTF-8',
+        'ctl00$ContentPlaceHolder1$txtQuery1': '1stpacket',
+        'ctl00$ContentPlaceHolder1$txtQuery2': '',
+        'ctl00$ContentPlaceHolder1$txtQuery3': '',
+        'ctl00$ContentPlaceHolder1$txtQuery4': '',
+        'ctl00$ContentPlaceHolder1$txtQuery5': '',
+        'ctl00$ContentPlaceHolder1$txtQuery6': '',
+        'ctl00$ContentPlaceHolder1$txtQuery7': '',
+        'ctl00$ContentPlaceHolder1$txtQuery8': '',
+        'ctl00$ContentPlaceHolder1$txtQuery9': '',
+        'ctl00$ContentPlaceHolder1$txtQuery10': ''}
+          // var symbol = "<!--symbol-->";
+          var url = "http://www.t-cat.com.tw/Inquire/trace.aspx";
+          // var count = "<!--count-->";
+          setTimeout(function() {
+             $.ajax({
+                type: 'POST',
+                url: url,
+                data: data,
+                success: function(result) {
+                   var div = document.createElement('html')
+                   div.innerHTML = result
+                   // div.classList.contains('tablelist')
+                   var r = div.getElementsByClassName('tablelist')
+                   if(r.length==0){
+                        r = '<h1>非有效單號 !!</h1>'
+                   }
+                    $(".container").html(r)
+                }
+             })
+          }, 500);
+       })
+    </script>
+</head>
+<body>
+    <div class='container'>
+        <div class='icon'><img src='icon.png' width='70px' height='70px' /></div>
+        <div class='content'>
+            <h2 id='number'><!--count--> 黑貓宅急便</h2>
+            <h1 id='status'>loading...</h1>
+        </div>
+    </div>
+</body>
+</html>

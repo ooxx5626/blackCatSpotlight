@@ -1,0 +1,11 @@
+{
+  "categories" : [
+    "Utilities"
+  ],
+  "displayName" : "bc number",
+  "name" : "blackcat",
+  "description" : "This is an blackcat plugin",
+  "examples" : [
+    "bc 625150973242"
+  ]
+}
