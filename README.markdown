@@ -1,4 +1,4 @@
-This is an auto-generated plugin skeleton. Edit the `examples.txt`, `info.json` and `plugin.py` files to turn it into the plugin you need.
+此套件可以幫助spotlight做黑貓宅急便包裹狀態的搜尋
 
 For more info on how this works, see [the docs](https://github.com/nate-parrott/Flashlight/wiki/Creating-a-Plugin).
 
